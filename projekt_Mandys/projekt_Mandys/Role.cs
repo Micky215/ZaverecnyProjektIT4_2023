@@ -8,17 +8,21 @@ namespace projekt_Mandys
 {
     internal class Role
     {
-        public Role(string jmeno)
+
+
+        public Role(int idRole)
         {
-            Jmeno = jmeno;
+            IdRole = idRole;
         }
 
-        public Role(int id)
+        public Role(int idRole, string nazevRole)
         {
-            Id = id;
+            IdRole = idRole;
+            NazevRole = nazevRole;
+            
         }
 
-        public string Jmeno { get; set; }
-        public int Id { get; set; }
+        public string NazevRole { get; set; }
+        public int IdRole { get; set; }
     }
 }

@@ -28,10 +28,17 @@ namespace projekt_Mandys
             this.Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnSpravaZamestnancu_Click(object sender, EventArgs e)
         {
             SpravaZamestnancu spravaZamestnancu = new SpravaZamestnancu();
             spravaZamestnancu.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnSpravaRoli_Click(object sender, EventArgs e)
+        {
+            SpravaRoli spravaRoli = new SpravaRoli();
+            spravaRoli.ShowDialog();
             this.Hide();
         }
     }

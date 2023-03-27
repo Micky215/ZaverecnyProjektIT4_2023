@@ -59,6 +59,28 @@ namespace projekt_Mandys
             return zametnanec;
         }
 
+        public static List<Role> ShowRole()
+        {
+            var role = new List<Role>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM Role";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                role.Add(new Role(reader.GetInt32(0), reader.GetString(1)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return role;
+        }
+
         public Uzivatel GetUzivatel(string uzivatelskeJmeno)
         {
             Uzivatel uzivatel = null;
@@ -139,82 +161,6 @@ namespace projekt_Mandys
                 conn.Close();
             }
             return uzivatele;
-        }
-
-        public List<Role> GetRole()
-        {
-            List<Role> role = new List<Role>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "select * from Role";
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            role.Add(new Role(reader["NazevRole"].ToString()));
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return role;
-        }
-
-        //public Zamestnanec GetZamestance(int idZamestnance)
-        //{
-        //    Zamestnanec zamestnanec = null;
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        conn.Open();
-        //        using (SqlCommand cmd = conn.CreateCommand())
-        //        {
-        //            cmd.CommandText = "select * from Zamestnanci where IdZamestnance=@id";
-        //            cmd.Parameters.AddWithValue("id", idZamestnance);
-        //            using (SqlDataReader reader = cmd.ExecuteReader())
-        //            {
-        //                if (reader.Read())
-        //                {
-        //                    zamestnanec = new Zamestnanec(reader["KrestniJmeno"].ToString(), reader["Prijmeni"].ToString());
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show("Zaměstnanec s takovýmto identifikačním číslem neexistuje!");
-        //                }
-        //            }
-        //        }
-        //        conn.Close();
-        //    }
-        //    return zamestnanec;
-        //}
-
-        public Role GetRole(int idRole)
-        {
-            Role role = null;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "select * from Role where IdRole=@id";
-                    cmd.Parameters.AddWithValue("id", idRole);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            role = new Role(reader["Name"].ToString());
-                        }
-                        else
-                        {
-                            MessageBox.Show("Role s takovýmto identifikačním číslem neexistuje!");
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return role;
         }
 
         public Role GetRole(string roleJmeno)

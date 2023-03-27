@@ -31,8 +31,8 @@
             this.btnSpravaUzivatelu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnSpravaZamestnancu = new System.Windows.Forms.Button();
+            this.btnSpravaRoli = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -64,24 +64,25 @@
             this.button3.Text = "Správa kontraktů";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSpravaZamestnancu
             // 
-            this.button4.Location = new System.Drawing.Point(24, 89);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 39);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Správa zaměstannců";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSpravaZamestnancu.Location = new System.Drawing.Point(24, 89);
+            this.btnSpravaZamestnancu.Name = "btnSpravaZamestnancu";
+            this.btnSpravaZamestnancu.Size = new System.Drawing.Size(119, 39);
+            this.btnSpravaZamestnancu.TabIndex = 2;
+            this.btnSpravaZamestnancu.Text = "Správa zaměstannců";
+            this.btnSpravaZamestnancu.UseVisualStyleBackColor = true;
+            this.btnSpravaZamestnancu.Click += new System.EventHandler(this.btnSpravaZamestnancu_Click);
             // 
-            // button5
+            // btnSpravaRoli
             // 
-            this.button5.Location = new System.Drawing.Point(24, 147);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(119, 39);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Správa rolí";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSpravaRoli.Location = new System.Drawing.Point(24, 147);
+            this.btnSpravaRoli.Name = "btnSpravaRoli";
+            this.btnSpravaRoli.Size = new System.Drawing.Size(119, 39);
+            this.btnSpravaRoli.TabIndex = 3;
+            this.btnSpravaRoli.Text = "Správa rolí";
+            this.btnSpravaRoli.UseVisualStyleBackColor = true;
+            this.btnSpravaRoli.Click += new System.EventHandler(this.btnSpravaRoli_Click);
             // 
             // button6
             // 
@@ -98,8 +99,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 221);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnSpravaRoli);
+            this.Controls.Add(this.btnSpravaZamestnancu);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSpravaUzivatelu);
@@ -114,8 +115,8 @@
         private System.Windows.Forms.Button btnSpravaUzivatelu;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSpravaZamestnancu;
+        private System.Windows.Forms.Button btnSpravaRoli;
         private System.Windows.Forms.Button button6;
     }
 }
