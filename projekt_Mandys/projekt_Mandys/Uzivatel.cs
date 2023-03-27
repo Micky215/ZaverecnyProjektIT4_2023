@@ -17,19 +17,20 @@ namespace projekt_Mandys
         public int IdZamestnance { get; set; }
         public int Id { get; set; }
 
-        public Uzivatel(string jmeno, string heslo) 
+        public Uzivatel(int id, int idZamestnance, string jmeno, string heslo, int role)
         {
             Jmeno = jmeno;
+            Role = role;
             Heslo = heslo;
-            
+            IdZamestnance = idZamestnance;
+            Id = id;
         }
 
-        public Uzivatel(int id, string jmeno, int idZamestnance, int role)
+        public Uzivatel(string jmeno, string heslo)
         {
-            IdZamestnance= idZamestnance;
+            Heslo = heslo;
             Jmeno = jmeno;
-            Id = id;
-            Role= role;
+           
         }
 
         //public bool OverovaniHesla(string text)

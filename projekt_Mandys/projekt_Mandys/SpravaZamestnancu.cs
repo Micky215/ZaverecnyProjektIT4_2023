@@ -10,27 +10,28 @@ using System.Windows.Forms;
 
 namespace projekt_Mandys
 {
-    public partial class SpravaUzivatelu : Form
+    public partial class SpravaZamestnancu : Form
     {
-        public SpravaUzivatelu()
+        public SpravaZamestnancu()
         {
             InitializeComponent();
-            UpdateUzivatelView();
+            UpdateZamestnancuView();
         }
 
-        private void UpdateUzivatelView()
+        private void UpdateZamestnancuView()
         {
-            listViewUzivatele.Items.Clear();
+            listViewZamestnanci.Items.Clear();
 
-            foreach (Uzivatel uzivatel in SqlRepository.ShowUzivatele())
+            foreach (Zamestnanec zamestnanec in SqlRepository.ShowZamestnance())
             {
-                listViewUzivatele.Items.Add(new ListViewItem(new string[] 
-                { 
-                  uzivatel.Id.ToString(), 
-                  uzivatel.IdZamestnance.ToString(),
-                  uzivatel.Jmeno, 
-                  uzivatel.Heslo,
-                  uzivatel.Role.ToString() 
+                listViewZamestnanci.Items.Add(new ListViewItem(new string[]
+                {
+                  zamestnanec.Id.ToString(),
+                  zamestnanec.KrestniJmeno,
+                  zamestnanec.Prijmeni,
+                  zamestnanec.DatumNarozeni.ToShortDateString(),
+                  zamestnanec.Email,
+                  zamestnanec.Telefon.ToString()
                 }));
                 //ListViewItem item = new ListViewItem();
                 //item.Text = uzivatel.Id.ToString();
@@ -41,7 +42,5 @@ namespace projekt_Mandys
                 //listViewBooks.Items.Add(item);
             }
         }
-
-      
     }
 }

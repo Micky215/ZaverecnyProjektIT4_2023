@@ -25,6 +25,14 @@ namespace projekt_Mandys
         {
             SpravaUzivatelu spravaUzivatelu = new SpravaUzivatelu();
             spravaUzivatelu.ShowDialog();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SpravaZamestnancu spravaZamestnancu = new SpravaZamestnancu();
+            spravaZamestnancu.ShowDialog();
+            this.Hide();
         }
     }
 }

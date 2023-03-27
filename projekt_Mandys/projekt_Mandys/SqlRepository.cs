@@ -12,18 +12,57 @@ namespace projekt_Mandys
 {
     internal class SqlRepository
     {
-        public string connection { get; set; }
-        
+        private static readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DEDMS\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30";
 
-        public SqlRepository(string connection)
+
+        public static List<Uzivatel> ShowUzivatele()
         {
-            this.connection = connection;
+            var uzivatele = new List<Uzivatel>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM Uzivatele";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                uzivatele.Add(new Uzivatel(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return uzivatele;
         }
-        
+
+        public static List<Zamestnanec> ShowZamestnance()
+        {
+            var zametnanec = new List<Zamestnanec>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM Zamestnanci";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                zametnanec.Add(new Zamestnanec(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetInt32(5)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return zametnanec;
+        }
+
         public Uzivatel GetUzivatel(string uzivatelskeJmeno)
         {
             Uzivatel uzivatel = null;
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -42,17 +81,17 @@ namespace projekt_Mandys
                         }
                     }
 
-                    
+
                 }
                 conn.Close();
 
-                
+
             }
             return uzivatel;
 
         }
 
-        public Uzivatel GetUzivatel(int id)
+        public Uzivatel GetUzivatelById(int id)
         {
             Uzivatel uzivatel = null;
             using (SqlConnection conn = new SqlConnection())
@@ -66,7 +105,7 @@ namespace projekt_Mandys
                     {
                         if (reader.Read())
                         {
-                            uzivatel = new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToString(reader["Jmeno"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToInt32(reader["Role"]));
+                            uzivatel = new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToString(reader["Jmeno"]), Convert.ToString(reader["Heslo"]), Convert.ToInt32(reader["Role"]));
                         }
                         else
                         {
@@ -83,7 +122,7 @@ namespace projekt_Mandys
         public List<Uzivatel> GetUsers()
         {
             List<Uzivatel> uzivatele = new List<Uzivatel>();
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -93,7 +132,7 @@ namespace projekt_Mandys
                     {
                         while (reader.Read())
                         {
-                            uzivatele.Add(new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), reader["Jmeno"].ToString(), Convert.ToInt32(reader["IdZamestnance"]), Convert.ToInt32(reader["Role"])));
+                            uzivatele.Add(new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToString(reader["Jmeno"]), Convert.ToString(reader["Heslo"]), Convert.ToInt32(reader["Role"])));
                         }
                     }
                 }
@@ -105,7 +144,7 @@ namespace projekt_Mandys
         public List<Role> GetRole()
         {
             List<Role> role = new List<Role>();
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -124,37 +163,37 @@ namespace projekt_Mandys
             return role;
         }
 
-        public Zamestnanec GetZamestance(int idZamestnance)
-        {
-            Zamestnanec zamestnanec = null;
-            using (SqlConnection conn = new SqlConnection(connection))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "select * from Zamestnanci where IdZamestnance=@id";
-                    cmd.Parameters.AddWithValue("id", idZamestnance);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            zamestnanec = new Zamestnanec(reader["KrestniJmeno"].ToString(), reader["Prijmeni"].ToString());
-                        }
-                        else
-                        {
-                            MessageBox.Show("Zaměstnanec s takovýmto identifikačním číslem neexistuje!");
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return zamestnanec;
-        }
+        //public Zamestnanec GetZamestance(int idZamestnance)
+        //{
+        //    Zamestnanec zamestnanec = null;
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = "select * from Zamestnanci where IdZamestnance=@id";
+        //            cmd.Parameters.AddWithValue("id", idZamestnance);
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                if (reader.Read())
+        //                {
+        //                    zamestnanec = new Zamestnanec(reader["KrestniJmeno"].ToString(), reader["Prijmeni"].ToString());
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("Zaměstnanec s takovýmto identifikačním číslem neexistuje!");
+        //                }
+        //            }
+        //        }
+        //        conn.Close();
+        //    }
+        //    return zamestnanec;
+        //}
 
         public Role GetRole(int idRole)
         {
             Role role = null;
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -181,7 +220,7 @@ namespace projekt_Mandys
         public Role GetRole(string roleJmeno)
         {
             Role role = null;
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -207,7 +246,7 @@ namespace projekt_Mandys
 
         public void UpdateUzivatele(string jmeno, int idRole, int idUzivatele)
         {
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -222,22 +261,7 @@ namespace projekt_Mandys
             }
         }
 
-        public void ResetUzivateHeslo(int idZamestnance, byte[] heslo, byte[] passwordSalt)
-        {
-            using (SqlConnection conn = new SqlConnection(connection))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "update Users set Password=@password,PasswordSalt=@passwordSalt where IdUser=@idUser";
-                    cmd.Parameters.AddWithValue("password", heslo);
-                    cmd.Parameters.AddWithValue("passwordSalt", passwordSalt);
-                    cmd.Parameters.AddWithValue("idUser", idZamestnance);
-                    cmd.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-        }
+        
     }
 
 }

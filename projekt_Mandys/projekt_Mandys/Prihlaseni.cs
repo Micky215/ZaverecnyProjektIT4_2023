@@ -16,7 +16,7 @@ namespace projekt_Mandys
         public Prihlaseni()
         {
             InitializeComponent();
-            sqlRepository = new SqlRepository(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DEDMS\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30");
+            sqlRepository = new SqlRepository();
         }
 
         private void btnPrihlasit_Click(object sender, EventArgs e)

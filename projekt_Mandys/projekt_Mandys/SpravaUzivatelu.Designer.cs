@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewUzivatele = new System.Windows.Forms.ListView();
             this.idUzivatele = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idZamestnance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.jmeno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -36,22 +36,22 @@
             this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewUzivatele
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewUzivatele.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.idUzivatele,
             this.idZamestnance,
             this.jmeno,
             this.heslo,
             this.role});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(665, 426);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewUzivatele.GridLines = true;
+            this.listViewUzivatele.HideSelection = false;
+            this.listViewUzivatele.Location = new System.Drawing.Point(12, 12);
+            this.listViewUzivatele.Name = "listViewUzivatele";
+            this.listViewUzivatele.Size = new System.Drawing.Size(665, 426);
+            this.listViewUzivatele.TabIndex = 0;
+            this.listViewUzivatele.UseCompatibleStateImageBehavior = false;
+            this.listViewUzivatele.View = System.Windows.Forms.View.Details;
             // 
             // idUzivatele
             // 
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewUzivatele);
             this.Name = "SpravaUzivatelu";
             this.Text = "SpravaUzivatelu";
             this.ResumeLayout(false);
@@ -91,7 +91,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewUzivatele;
         private System.Windows.Forms.ColumnHeader idUzivatele;
         private System.Windows.Forms.ColumnHeader idZamestnance;
         private System.Windows.Forms.ColumnHeader jmeno;
