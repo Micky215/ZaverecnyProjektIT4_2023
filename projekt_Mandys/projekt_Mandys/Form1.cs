@@ -21,6 +21,10 @@ namespace projekt_Mandys
             Uzivatel = uzivatel;
         }
 
-        
+        private void btnSpravaUzivatelu_Click(object sender, EventArgs e)
+        {
+            SpravaUzivatelu spravaUzivatelu = new SpravaUzivatelu();
+            spravaUzivatelu.ShowDialog();
+        }
     }
 }

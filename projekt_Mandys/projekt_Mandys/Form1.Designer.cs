@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn = new System.Windows.Forms.Button();
+            this.btnSpravaUzivatelu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -36,14 +36,15 @@
             this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btn
+            // btnSpravaUzivatelu
             // 
-            this.btn.Location = new System.Drawing.Point(24, 32);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(119, 39);
-            this.btn.TabIndex = 0;
-            this.btn.Text = "Správa uživatelů";
-            this.btn.UseVisualStyleBackColor = true;
+            this.btnSpravaUzivatelu.Location = new System.Drawing.Point(24, 32);
+            this.btnSpravaUzivatelu.Name = "btnSpravaUzivatelu";
+            this.btnSpravaUzivatelu.Size = new System.Drawing.Size(119, 39);
+            this.btnSpravaUzivatelu.TabIndex = 0;
+            this.btnSpravaUzivatelu.Text = "Správa uživatelů";
+            this.btnSpravaUzivatelu.UseVisualStyleBackColor = true;
+            this.btnSpravaUzivatelu.Click += new System.EventHandler(this.btnSpravaUzivatelu_Click);
             // 
             // button2
             // 
@@ -100,7 +101,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btn);
+            this.Controls.Add(this.btnSpravaUzivatelu);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -109,7 +110,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.Button btnSpravaUzivatelu;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
