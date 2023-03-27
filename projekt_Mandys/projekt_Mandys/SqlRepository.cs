@@ -49,7 +49,7 @@ namespace projekt_Mandys
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                zametnanec.Add(new Zamestnanec(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetInt32(5)));
+                zametnanec.Add(new Zamestnanec(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetString(5)));
             }
             reader.Close();
             conn.Close();

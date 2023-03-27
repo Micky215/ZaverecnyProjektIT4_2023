@@ -8,7 +8,7 @@ namespace projekt_Mandys
 {
     internal class Zamestnanec
     {
-        public Zamestnanec(int id, string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, int telefon)
+        public Zamestnanec(int id, string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, string telefon)
         {
             Id = id;
             KrestniJmeno = krestniJmeno;
@@ -23,7 +23,7 @@ namespace projekt_Mandys
         public string Prijmeni { get; set; }
         public DateTime DatumNarozeni { get; set; }
         public string Email { get; set; }
-        public int Telefon { get; set; }
+        public string Telefon { get; set; }
 
     }
 }
