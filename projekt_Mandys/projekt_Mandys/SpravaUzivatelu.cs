@@ -52,7 +52,6 @@ namespace projekt_Mandys
         {
             PridaniUzivateleForm pridaniUzivateleForm = new PridaniUzivateleForm();
             pridaniUzivateleForm.ShowDialog();
-            this.Hide();
         }
 
         private void btnEditaceUzivatele_Click(object sender, EventArgs e)

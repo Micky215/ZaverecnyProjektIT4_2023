@@ -18,7 +18,7 @@ namespace projekt_Mandys
             UpdateZamestnancuView();
         }
 
-        private void UpdateZamestnancuView()
+        public void UpdateZamestnancuView()
         {
             listViewZamestnanci.Items.Clear();
 
@@ -51,9 +51,9 @@ namespace projekt_Mandys
 
         private void btnPridaniZamestnance_Click(object sender, EventArgs e)
         {
-            PridaniZamestnance pridaniZamestnance = new PridaniZamestnance();
+            PridaniZamestnance pridaniZamestnance = new PridaniZamestnance(this);
             pridaniZamestnance.ShowDialog();
-            this.Hide();
+
         }
     }
 }

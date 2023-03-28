@@ -12,15 +12,19 @@ namespace projekt_Mandys
 {
     public partial class PridaniZamestnance : Form
     {
-        public PridaniZamestnance()
+        public SpravaZamestnancu Form { get; set; }
+        public PridaniZamestnance(SpravaZamestnancu form)
         {
             InitializeComponent();
+            Form = form;
         }
 
         private void btnVytvoritZamestnance_Click(object sender, EventArgs e)
         {
             SqlRepository.AddZamestnance(txtBoxKrestniJmeno.Text, txtBoxPrijmeni.Text, Convert.ToDateTime(txtBoxDatumNarozeni.Text), txtBoxEmail.Text, txtBoxTelefon.Text);
+            Form.UpdateZamestnancuView();
             Close();
+
         }
     }
 }
