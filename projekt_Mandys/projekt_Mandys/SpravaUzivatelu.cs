@@ -42,6 +42,22 @@ namespace projekt_Mandys
             }
         }
 
-      
+        private void btnMazaniUzivatele_Click(object sender, EventArgs e)
+        {
+            SqlRepository.RemoveUzivateleByID(int.Parse(listViewUzivatele.SelectedItems[0].Text));
+            UpdateUzivatelView();
+        }
+
+        private void btnPridaniUzivatele_Click(object sender, EventArgs e)
+        {
+            PridaniUzivateleForm pridaniUzivateleForm = new PridaniUzivateleForm();
+            pridaniUzivateleForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnEditaceUzivatele_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

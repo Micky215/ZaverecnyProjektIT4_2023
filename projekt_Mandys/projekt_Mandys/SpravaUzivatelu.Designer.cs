@@ -34,6 +34,9 @@
             this.jmeno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.heslo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.role = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnPridaniUzivatele = new System.Windows.Forms.Button();
+            this.btnEditaceUzivatele = new System.Windows.Forms.Button();
+            this.btnMazaniUzivatele = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewUzivatele
@@ -44,9 +47,11 @@
             this.jmeno,
             this.heslo,
             this.role});
+            this.listViewUzivatele.FullRowSelect = true;
             this.listViewUzivatele.GridLines = true;
             this.listViewUzivatele.HideSelection = false;
             this.listViewUzivatele.Location = new System.Drawing.Point(12, 12);
+            this.listViewUzivatele.MultiSelect = false;
             this.listViewUzivatele.Name = "listViewUzivatele";
             this.listViewUzivatele.Size = new System.Drawing.Size(665, 426);
             this.listViewUzivatele.TabIndex = 0;
@@ -77,11 +82,44 @@
             this.role.Text = "Role";
             this.role.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnPridaniUzivatele
+            // 
+            this.btnPridaniUzivatele.Location = new System.Drawing.Point(683, 40);
+            this.btnPridaniUzivatele.Name = "btnPridaniUzivatele";
+            this.btnPridaniUzivatele.Size = new System.Drawing.Size(111, 32);
+            this.btnPridaniUzivatele.TabIndex = 1;
+            this.btnPridaniUzivatele.Text = "Přidání uživatele";
+            this.btnPridaniUzivatele.UseVisualStyleBackColor = true;
+            this.btnPridaniUzivatele.Click += new System.EventHandler(this.btnPridaniUzivatele_Click);
+            // 
+            // btnEditaceUzivatele
+            // 
+            this.btnEditaceUzivatele.Location = new System.Drawing.Point(683, 147);
+            this.btnEditaceUzivatele.Name = "btnEditaceUzivatele";
+            this.btnEditaceUzivatele.Size = new System.Drawing.Size(111, 32);
+            this.btnEditaceUzivatele.TabIndex = 2;
+            this.btnEditaceUzivatele.Text = "Upravit uživatele";
+            this.btnEditaceUzivatele.UseVisualStyleBackColor = true;
+            this.btnEditaceUzivatele.Click += new System.EventHandler(this.btnEditaceUzivatele_Click);
+            // 
+            // btnMazaniUzivatele
+            // 
+            this.btnMazaniUzivatele.Location = new System.Drawing.Point(683, 258);
+            this.btnMazaniUzivatele.Name = "btnMazaniUzivatele";
+            this.btnMazaniUzivatele.Size = new System.Drawing.Size(111, 32);
+            this.btnMazaniUzivatele.TabIndex = 3;
+            this.btnMazaniUzivatele.Text = "Smazat uživatele";
+            this.btnMazaniUzivatele.UseVisualStyleBackColor = true;
+            this.btnMazaniUzivatele.Click += new System.EventHandler(this.btnMazaniUzivatele_Click);
+            // 
             // SpravaUzivatelu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMazaniUzivatele);
+            this.Controls.Add(this.btnEditaceUzivatele);
+            this.Controls.Add(this.btnPridaniUzivatele);
             this.Controls.Add(this.listViewUzivatele);
             this.Name = "SpravaUzivatelu";
             this.Text = "SpravaUzivatelu";
@@ -97,5 +135,8 @@
         private System.Windows.Forms.ColumnHeader jmeno;
         private System.Windows.Forms.ColumnHeader heslo;
         private System.Windows.Forms.ColumnHeader role;
+        private System.Windows.Forms.Button btnPridaniUzivatele;
+        private System.Windows.Forms.Button btnEditaceUzivatele;
+        private System.Windows.Forms.Button btnMazaniUzivatele;
     }
 }

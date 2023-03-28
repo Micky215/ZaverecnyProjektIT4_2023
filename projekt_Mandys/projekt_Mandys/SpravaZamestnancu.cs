@@ -42,5 +42,18 @@ namespace projekt_Mandys
                 //listViewBooks.Items.Add(item);
             }
         }
+
+        private void btnSmazatZamestnance_Click(object sender, EventArgs e)
+        {
+            SqlRepository.RemoveZamestnanceByID(int.Parse(listViewZamestnanci.SelectedItems[0].Text));
+            UpdateZamestnancuView();
+        }
+
+        private void btnPridaniZamestnance_Click(object sender, EventArgs e)
+        {
+            PridaniZamestnance pridaniZamestnance = new PridaniZamestnance();
+            pridaniZamestnance.ShowDialog();
+            this.Hide();
+        }
     }
 }

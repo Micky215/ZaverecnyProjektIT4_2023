@@ -35,6 +35,9 @@
             this.DatumNarozeni = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Telefon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnPridaniZamestnance = new System.Windows.Forms.Button();
+            this.btnUpravitZamestnance = new System.Windows.Forms.Button();
+            this.btnSmazatZamestnance = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewZamestnanci
@@ -46,9 +49,11 @@
             this.DatumNarozeni,
             this.Email,
             this.Telefon});
+            this.listViewZamestnanci.FullRowSelect = true;
             this.listViewZamestnanci.GridLines = true;
             this.listViewZamestnanci.HideSelection = false;
             this.listViewZamestnanci.Location = new System.Drawing.Point(12, 12);
+            this.listViewZamestnanci.MultiSelect = false;
             this.listViewZamestnanci.Name = "listViewZamestnanci";
             this.listViewZamestnanci.Size = new System.Drawing.Size(671, 426);
             this.listViewZamestnanci.TabIndex = 0;
@@ -90,11 +95,43 @@
             this.Telefon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Telefon.Width = 100;
             // 
+            // btnPridaniZamestnance
+            // 
+            this.btnPridaniZamestnance.Location = new System.Drawing.Point(701, 33);
+            this.btnPridaniZamestnance.Name = "btnPridaniZamestnance";
+            this.btnPridaniZamestnance.Size = new System.Drawing.Size(87, 34);
+            this.btnPridaniZamestnance.TabIndex = 1;
+            this.btnPridaniZamestnance.Text = "Přidání zaměstnance";
+            this.btnPridaniZamestnance.UseVisualStyleBackColor = true;
+            this.btnPridaniZamestnance.Click += new System.EventHandler(this.btnPridaniZamestnance_Click);
+            // 
+            // btnUpravitZamestnance
+            // 
+            this.btnUpravitZamestnance.Location = new System.Drawing.Point(701, 152);
+            this.btnUpravitZamestnance.Name = "btnUpravitZamestnance";
+            this.btnUpravitZamestnance.Size = new System.Drawing.Size(87, 35);
+            this.btnUpravitZamestnance.TabIndex = 2;
+            this.btnUpravitZamestnance.Text = "Upravit zaměstnance";
+            this.btnUpravitZamestnance.UseVisualStyleBackColor = true;
+            // 
+            // btnSmazatZamestnance
+            // 
+            this.btnSmazatZamestnance.Location = new System.Drawing.Point(701, 280);
+            this.btnSmazatZamestnance.Name = "btnSmazatZamestnance";
+            this.btnSmazatZamestnance.Size = new System.Drawing.Size(87, 35);
+            this.btnSmazatZamestnance.TabIndex = 3;
+            this.btnSmazatZamestnance.Text = "Smazat uživatele";
+            this.btnSmazatZamestnance.UseVisualStyleBackColor = true;
+            this.btnSmazatZamestnance.Click += new System.EventHandler(this.btnSmazatZamestnance_Click);
+            // 
             // SpravaZamestnancu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSmazatZamestnance);
+            this.Controls.Add(this.btnUpravitZamestnance);
+            this.Controls.Add(this.btnPridaniZamestnance);
             this.Controls.Add(this.listViewZamestnanci);
             this.Name = "SpravaZamestnancu";
             this.Text = "SpravaZamestnancu";
@@ -111,5 +148,8 @@
         private System.Windows.Forms.ColumnHeader DatumNarozeni;
         private System.Windows.Forms.ColumnHeader Email;
         private System.Windows.Forms.ColumnHeader Telefon;
+        private System.Windows.Forms.Button btnPridaniZamestnance;
+        private System.Windows.Forms.Button btnUpravitZamestnance;
+        private System.Windows.Forms.Button btnSmazatZamestnance;
     }
 }

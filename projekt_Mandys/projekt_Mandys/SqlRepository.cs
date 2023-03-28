@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,65 @@ namespace projekt_Mandys
 
             return role;
         }
+
+        public static void RemoveUzivateleByID(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "DELETE from Uzivatele WHERE IdUzivatele =@id";
+            command.Parameters.AddWithValue("id", id);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+
+        public static void AddUzivatele(int idZamestnance, string jmeno, string heslo, int role)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "INSERT INTO Uzivatele VALUES (@IdZamestnance, @Jmeno, @Heslo, @Role)";
+            command.Parameters.AddWithValue("IdZamestnance", idZamestnance);
+            command.Parameters.AddWithValue("Jmeno", jmeno);
+            command.Parameters.AddWithValue("Heslo", heslo);
+            command.Parameters.AddWithValue("Role", role);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public static void RemoveZamestnanceByID(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            SqlCommand command2 = conn.CreateCommand();
+            command2.CommandText = "DELETE from Uzivatele WHERE IdZamestnanci =@id";
+            command.CommandText = "DELETE from Zamestnanci WHERE IdZamestnanci =@id";
+            command2.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("id", id);
+            command2.ExecuteNonQuery();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void AddZamestnance(string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, string telefon)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "INSERT INTO Zamestnanci VALUES (@KrestniJmeno, @Prijmeni, @DatumNarozeni, @Email, @Telefon)";
+            command.Parameters.AddWithValue("KrestniJmeno", krestniJmeno);
+            command.Parameters.AddWithValue("Prijmeni", prijmeni);
+            command.Parameters.AddWithValue("DatumNarozeni", datumNarozeni);
+            command.Parameters.AddWithValue("Email", email);
+            command.Parameters.AddWithValue("Telefon", telefon);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
 
         public Uzivatel GetUzivatel(string uzivatelskeJmeno)
         {
