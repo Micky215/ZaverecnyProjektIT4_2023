@@ -12,16 +12,19 @@ namespace projekt_Mandys
 {
     public partial class PridaniUzivateleForm : Form
     {
+        public SpravaUzivatelu Form { get; set; }
         SqlRepository sqlRepository;
-        public PridaniUzivateleForm()
+        public PridaniUzivateleForm(SpravaUzivatelu form)
         {
             InitializeComponent();
             sqlRepository = new SqlRepository();
+            Form = form;
         }
 
         private void btnPridatUzivatele_Click(object sender, EventArgs e)
         {
             SqlRepository.AddUzivatele(Convert.ToInt32(txtBoxIdZamestnance.Text), txtBoxJmeno.Text, txtBoxHeslo.Text, Convert.ToInt32(txtBoxRole.Text));
+            Form.UpdateUzivatelView();
             Close();
         }
     }

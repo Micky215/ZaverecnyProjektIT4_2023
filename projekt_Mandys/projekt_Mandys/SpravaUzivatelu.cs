@@ -18,7 +18,7 @@ namespace projekt_Mandys
             UpdateUzivatelView();
         }
 
-        private void UpdateUzivatelView()
+        public void UpdateUzivatelView()
         {
             listViewUzivatele.Items.Clear();
 
@@ -50,7 +50,7 @@ namespace projekt_Mandys
 
         private void btnPridaniUzivatele_Click(object sender, EventArgs e)
         {
-            PridaniUzivateleForm pridaniUzivateleForm = new PridaniUzivateleForm();
+            PridaniUzivateleForm pridaniUzivateleForm = new PridaniUzivateleForm(this);
             pridaniUzivateleForm.ShowDialog();
         }
 
