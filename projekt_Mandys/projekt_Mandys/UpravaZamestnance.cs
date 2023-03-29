@@ -12,20 +12,27 @@ namespace projekt_Mandys
 {
     public partial class UpravaZamestnance : Form
     {
-        public UpravaZamestnance Form { get; set; }
-        public UpravaZamestnance()
+        public SpravaZamestnancu Form { get; set; }
+        public int IdZamestnance { get; set; }
+        public UpravaZamestnance(int idZamestnance, SpravaZamestnancu form)
         {
             InitializeComponent();
-            Form = this;
+            Form = form;
+            IdZamestnance = idZamestnance;
         }
 
-        private void btnUpravaZamestnance_Click(object sender, EventArgs e)
+       
+
+        private void btnUpravaZamestnance_Click_1(object sender, EventArgs e)
         {
-            SqlRepository.EditZamestnance(txtBoxUpravaJmenaZamestnance.Text, txtBoxUpravaPrijmeniZamestnance.Text, Convert.ToDateTime(txtBoxUpravaDataZamestnance.Text), txtBoxUpravaEmailuZamestnance.Text, txtBoxUpravaTelefonuZamestnance.Text);
+            SqlRepository.EditZamestnance(IdZamestnance, txtBoxUpravaJmenaZamestnance.Text, txtBoxUpravaPrijmeniZamestnance.Text, dateTimePickerUpravaDataZamestnance.Value, txtBoxUpravaEmailuZamestnance.Text, txtBoxUpravaTelefonuZamestnance.Text);
             Form.UpdateZamestnancuView();
             Close();
         }
 
-       
+        private void UpravaZamestnance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

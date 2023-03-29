@@ -56,6 +56,10 @@ namespace projekt_Mandys
 
         }
 
-        
+        private void btnUpravitZamestnance_Click(object sender, EventArgs e)
+        {
+            UpravaZamestnance upravaZamestnance = new UpravaZamestnance(Convert.ToInt32(listViewZamestnanci.SelectedItems[0].SubItems[0].Text), this);
+            upravaZamestnance.ShowDialog();
+        }
     }
 }

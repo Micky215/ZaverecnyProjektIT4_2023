@@ -87,7 +87,7 @@
             // 
             this.Email.Text = "E-mail";
             this.Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Email.Width = 100;
+            this.Email.Width = 150;
             // 
             // Telefon
             // 
@@ -113,7 +113,7 @@
             this.btnUpravitZamestnance.TabIndex = 2;
             this.btnUpravitZamestnance.Text = "Upravit zaměstnance";
             this.btnUpravitZamestnance.UseVisualStyleBackColor = true;
-            
+            this.btnUpravitZamestnance.Click += new System.EventHandler(this.btnUpravitZamestnance_Click);
             // 
             // btnSmazatZamestnance
             // 

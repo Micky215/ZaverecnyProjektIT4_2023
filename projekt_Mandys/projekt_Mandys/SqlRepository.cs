@@ -13,7 +13,7 @@ namespace projekt_Mandys
 {
     internal class SqlRepository
     {
-        private static readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mandys.michal\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30";
+        private static readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DEDMS\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30";
 
 
         public static List<Uzivatel> ShowUzivatele()
@@ -109,6 +109,21 @@ namespace projekt_Mandys
 
         }
 
+        public static void EditUzivatele(int id, int idZamestnanci, string jmeno, string heslo, int role)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "UPDATE Uzivatele SET IdZamestnanci = @idZamestnanci, Jmeno=@jmeno, Heslo=@heslo, Role=@role WHERE IdUzivatele=@id";
+            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("idZamestnanci", idZamestnanci);
+            command.Parameters.AddWithValue("jmeno", jmeno);
+            command.Parameters.AddWithValue("heslo", heslo);
+            command.Parameters.AddWithValue("role", role);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public static void RemoveZamestnanceByID(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -128,13 +143,13 @@ namespace projekt_Mandys
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand command = conn.CreateCommand();
-            command.CommandText = "UPDATE Zamestnance SET KrestniJmeno=@krestniJmeno, Prijmeni=@prijmeni, DatumNarozeni=@datumNarozeni, Email=@email, Telefon=@telefon WHERE id=@id";
-            command.Parameters.AddWithValue("IdZamestnanci", id);
-            command.Parameters.AddWithValue("KrestniJmeno", krestniJmeno);
-            command.Parameters.AddWithValue("Prijmeni", prijmeni);
-            command.Parameters.AddWithValue("DatumNarozeni", datumNarozeni);
-            command.Parameters.AddWithValue("Email", email);
-            command.Parameters.AddWithValue("Telefon", telefon);
+            command.CommandText = "UPDATE Zamestnanci SET KrestniJmeno=@krestniJmeno, Prijmeni=@prijmeni, DatumNarozeni=@datumNarozeni, Email=@email, Telefon=@telefon WHERE IdZamestnanci=@id";
+            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("krestniJmeno", krestniJmeno);
+            command.Parameters.AddWithValue("prijmeni", prijmeni);
+            command.Parameters.AddWithValue("datumNarozeni", datumNarozeni);
+            command.Parameters.AddWithValue("email", email);
+            command.Parameters.AddWithValue("telefon", telefon);
             command.ExecuteNonQuery();
             conn.Close();
         }

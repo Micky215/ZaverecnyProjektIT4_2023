@@ -56,8 +56,8 @@ namespace projekt_Mandys
 
         private void btnEditaceUzivatele_Click(object sender, EventArgs e)
         {
-            UpravaZamestnance upravaZamestnance = new UpravaZamestnance(this);
-            upravaZamestnance.ShowDialog();
+            UpravaUzivatele upravaUzivatele = new UpravaUzivatele(Convert.ToInt32(listViewUzivatele.SelectedItems[0].SubItems[0].Text), this);
+            upravaUzivatele.ShowDialog();
         }
     }
 }
