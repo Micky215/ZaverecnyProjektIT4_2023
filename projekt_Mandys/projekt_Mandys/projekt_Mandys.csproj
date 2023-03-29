@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PridaniRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PridaniRole.Designer.cs">
+      <DependentUpon>PridaniRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="PridaniUzivateleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Zamestnanec.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PridaniRole.resx">
+      <DependentUpon>PridaniRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PridaniUzivateleForm.resx">
       <DependentUpon>PridaniUzivateleForm.cs</DependentUpon>

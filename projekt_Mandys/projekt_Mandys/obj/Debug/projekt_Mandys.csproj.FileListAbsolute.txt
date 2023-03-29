@@ -53,3 +53,4 @@ C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\bin\De
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\bin\Debug\projekt_Mandys.exe
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\bin\Debug\projekt_Mandys.pdb
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UpravaUzivatele.resources
+C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.PridaniRole.resources

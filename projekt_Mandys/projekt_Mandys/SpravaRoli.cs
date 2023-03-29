@@ -18,7 +18,7 @@ namespace projekt_Mandys
             UpdateSpravaRoli();
         }
 
-        private void UpdateSpravaRoli()
+        public void UpdateSpravaRoli()
         {
             listViewRole.Items.Clear();
 
@@ -38,6 +38,18 @@ namespace projekt_Mandys
                 //item.SubItems.Add(book.Genre);
                 //listViewBooks.Items.Add(item);
             }
+        }
+
+        private void btnPridaniRole_Click(object sender, EventArgs e)
+        {
+            PridaniRole pridaniRole = new PridaniRole(this);
+            pridaniRole.ShowDialog();
+        }
+
+        private void btnSmazaniRole_Click(object sender, EventArgs e)
+        {
+            SqlRepository.RemoveRoleByID(int.Parse(listViewRole.SelectedItems[0].Text));
+            UpdateSpravaRoli();
         }
     }
 }

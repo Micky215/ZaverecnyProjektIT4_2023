@@ -173,6 +173,28 @@ namespace projekt_Mandys
 
         }
 
+        public static void AddRole(string nazevRole)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "INSERT INTO Role VALUES (@NazevRole)";
+            command.Parameters.AddWithValue("NazevRole", nazevRole);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public static void RemoveRoleByID(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "DELETE from Role WHERE IdRole =@id";
+            command.Parameters.AddWithValue("id", id);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public Uzivatel GetUzivatel(string uzivatelskeJmeno)
         {
