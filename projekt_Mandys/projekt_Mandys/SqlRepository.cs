@@ -13,7 +13,7 @@ namespace projekt_Mandys
 {
     internal class SqlRepository
     {
-        private static readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DEDMS\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30";
+        private static readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mandys.michal\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30";
 
 
         public static List<Uzivatel> ShowUzivatele()
@@ -123,6 +123,24 @@ namespace projekt_Mandys
             command.ExecuteNonQuery();
             conn.Close();
         }
+        public static void EditZamestnance(int id, string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, string telefon)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "UPDATE Zamestnance SET KrestniJmeno=@krestniJmeno, Prijmeni=@prijmeni, DatumNarozeni=@datumNarozeni, Email=@email, Telefon=@telefon WHERE id=@id";
+            command.Parameters.AddWithValue("IdZamestnanci", id);
+            command.Parameters.AddWithValue("KrestniJmeno", krestniJmeno);
+            command.Parameters.AddWithValue("Prijmeni", prijmeni);
+            command.Parameters.AddWithValue("DatumNarozeni", datumNarozeni);
+            command.Parameters.AddWithValue("Email", email);
+            command.Parameters.AddWithValue("Telefon", telefon);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+
+
 
         public static void AddZamestnance(string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, string telefon)
         {

@@ -21,33 +21,35 @@ namespace projekt_Mandys
 
         private void btnPrihlasit_Click(object sender, EventArgs e)
         {
-            if (txtBoxJmeno.Text != " " && txtBoxHeslo.Text != " ")
-            {
-                Uzivatel uzivatel = sqlRepository.GetUzivatel(txtBoxJmeno.Text);
-                if (uzivatel != null)
+                if (txtBoxJmeno.Text != " " && txtBoxHeslo.Text != " ")
                 {
-                    if(txtBoxHeslo.Text == uzivatel.Heslo.ToString())
+                 Uzivatel uzivatel = sqlRepository.GetUzivatel(txtBoxJmeno.Text);
+                    if (uzivatel != null)
                     {
-                        Form1 form1 = new Form1(uzivatel);
-                        form1.Show();
-                        this.Hide();
+                        if (txtBoxHeslo.Text == uzivatel.Heslo.ToString())
+                        {
+                            Form1 form1 = new Form1(uzivatel);
+                            form1.Show();
+                            this.Hide();
+                        }
+
+
+                        else
+                        {
+                            MessageBox.Show("Heslo není správné!");
+                        }
                     }
-
-
                     else
                     {
-                        MessageBox.Show("Heslo není správné!");
+                        MessageBox.Show("Tento uživatel neexistuje!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Tento uživatel neexistuje!");
+                    MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
-            }
+            
+            
         }
     }
 }

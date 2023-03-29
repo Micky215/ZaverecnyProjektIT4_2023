@@ -25,21 +25,21 @@ namespace projekt_Mandys
         {
             SpravaUzivatelu spravaUzivatelu = new SpravaUzivatelu();
             spravaUzivatelu.ShowDialog();
-            this.Hide();
+            //this.Hide();
         }
 
         private void btnSpravaZamestnancu_Click(object sender, EventArgs e)
         {
             SpravaZamestnancu spravaZamestnancu = new SpravaZamestnancu();
             spravaZamestnancu.ShowDialog();
-            this.Hide();
+            //this.Hide();
         }
 
         private void btnSpravaRoli_Click(object sender, EventArgs e)
         {
             SpravaRoli spravaRoli = new SpravaRoli();
             spravaRoli.ShowDialog();
-            this.Hide();
+            //this.Hide();
         }
     }
 }

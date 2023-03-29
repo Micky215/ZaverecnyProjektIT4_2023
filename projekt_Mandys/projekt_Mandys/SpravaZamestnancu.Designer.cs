@@ -113,6 +113,7 @@
             this.btnUpravitZamestnance.TabIndex = 2;
             this.btnUpravitZamestnance.Text = "Upravit zaměstnance";
             this.btnUpravitZamestnance.UseVisualStyleBackColor = true;
+            
             // 
             // btnSmazatZamestnance
             // 

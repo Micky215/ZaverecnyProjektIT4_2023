@@ -92,6 +92,12 @@
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="UpravaZamestnance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravaZamestnance.Designer.cs">
+      <DependentUpon>UpravaZamestnance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uzivatel.cs" />
     <Compile Include="Zamestnanec.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpravaZamestnancu.resx">
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravaZamestnance.resx">
+      <DependentUpon>UpravaZamestnance.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
