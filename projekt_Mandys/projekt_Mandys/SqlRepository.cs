@@ -278,6 +278,55 @@ namespace projekt_Mandys
 
         }
 
+        //ZOBRAZENÍ KONTRAKTU
+        public static List<Kontrakt> ShowKontrakt()
+        {
+            var kontrakt = new List<Kontrakt>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM Kontrakt";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                kontrakt.Add(new Kontrakt(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return kontrakt;
+        }
+
+        public static void AddKontrakt(string nazev, string popis)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "INSERT INTO Kontrakt VALUES (@nazev, @popis)";
+            command.Parameters.AddWithValue("nazev", nazev);
+            command.Parameters.AddWithValue("popis", popis);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public static void EditKontrakt(int id, string zakaznik, string popis)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "UPDATE Kontrakt SET Zakaznik = @zakaznik, Popis=@popis WHERE IdKontraktu=@id";
+            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("zakaznik", zakaznik);
+            command.Parameters.AddWithValue("popis", popis);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
         //ZOBRAZENÍ TYPU PRÁCE
         public static List<TypPrace> ShowTypyPrace()
         {

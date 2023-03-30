@@ -52,6 +52,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kontrakt.cs" />
+    <Compile Include="PridaniKontraktu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PridaniKontraktu.Designer.cs">
+      <DependentUpon>PridaniKontraktu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PridaniRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +124,12 @@
     </Compile>
     <Compile Include="SqlRepository.cs" />
     <Compile Include="TypPrace.cs" />
+    <Compile Include="UpravaKontraktu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravaKontraktu.Designer.cs">
+      <DependentUpon>UpravaKontraktu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravaRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +158,9 @@
     <Compile Include="Zamestnanec.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PridaniKontraktu.resx">
+      <DependentUpon>PridaniKontraktu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PridaniRole.resx">
       <DependentUpon>PridaniRole.cs</DependentUpon>
@@ -184,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpravaZamestnancu.resx">
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravaKontraktu.resx">
+      <DependentUpon>UpravaKontraktu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpravaRole.resx">
       <DependentUpon>UpravaRole.cs</DependentUpon>
