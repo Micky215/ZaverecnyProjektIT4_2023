@@ -54,6 +54,7 @@
             this.btnSpravaTypuPrace.TabIndex = 1;
             this.btnSpravaTypuPrace.Text = "Správa typů práce";
             this.btnSpravaTypuPrace.UseVisualStyleBackColor = true;
+            this.btnSpravaTypuPrace.Click += new System.EventHandler(this.btnSpravaTypuPrace_Click);
             // 
             // btnSpravaKontraktu
             // 

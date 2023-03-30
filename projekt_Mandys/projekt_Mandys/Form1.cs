@@ -41,5 +41,11 @@ namespace projekt_Mandys
             spravaRoli.ShowDialog();
             //this.Hide();
         }
+
+        private void btnSpravaTypuPrace_Click(object sender, EventArgs e)
+        {
+            SpravaTypuPrace spravaTypuPrace = new SpravaTypuPrace();
+            spravaTypuPrace.ShowDialog();
+        }
     }
 }

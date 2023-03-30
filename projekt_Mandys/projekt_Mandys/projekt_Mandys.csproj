@@ -85,6 +85,12 @@
     <Compile Include="SpravaRoli.Designer.cs">
       <DependentUpon>SpravaRoli.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpravaTypuPrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravaTypuPrace.Designer.cs">
+      <DependentUpon>SpravaTypuPrace.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpravaUzivatelu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="SpravaRoli.resx">
       <DependentUpon>SpravaRoli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravaTypuPrace.resx">
+      <DependentUpon>SpravaTypuPrace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpravaUzivatelu.resx">
       <DependentUpon>SpravaUzivatelu.cs</DependentUpon>

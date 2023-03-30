@@ -55,3 +55,4 @@ C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\bin\De
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UpravaUzivatele.resources
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.PridaniRole.resources
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UpravaRole.resources
+C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.SpravaTypuPrace.resources
