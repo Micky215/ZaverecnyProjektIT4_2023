@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LabelNazevKontraktu = new System.Windows.Forms.Label();
+            this.LabelZakaznik = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxPridaniNazvuKontraktu = new System.Windows.Forms.TextBox();
             this.txtBoxPridaniPopisuKontraktu = new System.Windows.Forms.TextBox();
             this.btnPridatKontrakt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // LabelNazevKontraktu
+            // LabelZakaznik
             // 
-            this.LabelNazevKontraktu.AutoSize = true;
-            this.LabelNazevKontraktu.Location = new System.Drawing.Point(26, 80);
-            this.LabelNazevKontraktu.Name = "LabelNazevKontraktu";
-            this.LabelNazevKontraktu.Size = new System.Drawing.Size(86, 13);
-            this.LabelNazevKontraktu.TabIndex = 0;
-            this.LabelNazevKontraktu.Text = "Název kontraktu";
+            this.LabelZakaznik.AutoSize = true;
+            this.LabelZakaznik.Location = new System.Drawing.Point(26, 80);
+            this.LabelZakaznik.Name = "LabelZakaznik";
+            this.LabelZakaznik.Size = new System.Drawing.Size(53, 13);
+            this.LabelZakaznik.TabIndex = 0;
+            this.LabelZakaznik.Text = "Zákazník";
             // 
             // label2
             // 
@@ -86,7 +86,7 @@
             this.Controls.Add(this.txtBoxPridaniPopisuKontraktu);
             this.Controls.Add(this.txtBoxPridaniNazvuKontraktu);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.LabelNazevKontraktu);
+            this.Controls.Add(this.LabelZakaznik);
             this.Name = "PridaniKontraktu";
             this.Text = "PridaniKontraktu";
             this.ResumeLayout(false);
@@ -96,7 +96,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LabelNazevKontraktu;
+        private System.Windows.Forms.Label LabelZakaznik;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxPridaniNazvuKontraktu;
         private System.Windows.Forms.TextBox txtBoxPridaniPopisuKontraktu;

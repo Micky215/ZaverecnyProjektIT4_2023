@@ -52,5 +52,11 @@ namespace projekt_Mandys
             UpravaKontraktu upravaKontraktu = new UpravaKontraktu(Convert.ToInt32(listViewSpravaKontraktu.SelectedItems[0].SubItems[0].Text), this);
             upravaKontraktu.ShowDialog();
         }
+
+        private void btnMazaniKontraktu_Click(object sender, EventArgs e)
+        {
+            SqlRepository.RemoveKontraktByID(int.Parse(listViewSpravaKontraktu.SelectedItems[0].Text));
+            UpdateKontraktuView();
+        }
     }
 }

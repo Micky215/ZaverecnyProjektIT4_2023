@@ -301,6 +301,7 @@ namespace projekt_Mandys
             return kontrakt;
         }
 
+        //PŘIDÁNÍ KONTRAKTŮ
         public static void AddKontrakt(string nazev, string popis)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -314,6 +315,7 @@ namespace projekt_Mandys
 
         }
 
+        //ÚPRAVA KONTRAKTŮ
         public static void EditKontrakt(int id, string zakaznik, string popis)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -348,6 +350,18 @@ namespace projekt_Mandys
 
 
             return typPrace;
+        }
+
+        //MAZÁNÍ KONTRAKTŮ POMOCÍ ID
+        public static void RemoveKontraktByID(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "DELETE from Kontrakt WHERE IdKontraktu =@id";
+            command.Parameters.AddWithValue("id", id);
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
         //MAZÁNÍ TYPŮ PRÁCE POMOCÍ ID

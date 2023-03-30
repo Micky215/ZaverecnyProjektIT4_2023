@@ -98,6 +98,7 @@
             this.btnMazaniKontraktu.TabIndex = 3;
             this.btnMazaniKontraktu.Text = "Smazání kontraktů";
             this.btnMazaniKontraktu.UseVisualStyleBackColor = true;
+            this.btnMazaniKontraktu.Click += new System.EventHandler(this.btnMazaniKontraktu_Click);
             // 
             // SpravaKontraktu
             // 

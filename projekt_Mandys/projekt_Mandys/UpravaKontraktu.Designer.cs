@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnUpravitKontrakt = new System.Windows.Forms.Button();
-            this.LabelNazevKontraktu = new System.Windows.Forms.Label();
+            this.LabelZakaznik = new System.Windows.Forms.Label();
             this.LabelPopisKontraktu = new System.Windows.Forms.Label();
             this.txtBoxUpravitNazevKontraktu = new System.Windows.Forms.TextBox();
             this.txtBoxUpravaPopisuKontraktu = new System.Windows.Forms.TextBox();
@@ -45,14 +45,14 @@
             this.btnUpravitKontrakt.UseVisualStyleBackColor = true;
             this.btnUpravitKontrakt.Click += new System.EventHandler(this.btnUpravitKontrakt_Click);
             // 
-            // LabelNazevKontraktu
+            // LabelZakaznik
             // 
-            this.LabelNazevKontraktu.AutoSize = true;
-            this.LabelNazevKontraktu.Location = new System.Drawing.Point(37, 88);
-            this.LabelNazevKontraktu.Name = "LabelNazevKontraktu";
-            this.LabelNazevKontraktu.Size = new System.Drawing.Size(86, 13);
-            this.LabelNazevKontraktu.TabIndex = 1;
-            this.LabelNazevKontraktu.Text = "Název kontraktu";
+            this.LabelZakaznik.AutoSize = true;
+            this.LabelZakaznik.Location = new System.Drawing.Point(37, 88);
+            this.LabelZakaznik.Name = "LabelZakaznik";
+            this.LabelZakaznik.Size = new System.Drawing.Size(53, 13);
+            this.LabelZakaznik.TabIndex = 1;
+            this.LabelZakaznik.Text = "Zákazník";
             // 
             // LabelPopisKontraktu
             // 
@@ -85,7 +85,7 @@
             this.Controls.Add(this.txtBoxUpravaPopisuKontraktu);
             this.Controls.Add(this.txtBoxUpravitNazevKontraktu);
             this.Controls.Add(this.LabelPopisKontraktu);
-            this.Controls.Add(this.LabelNazevKontraktu);
+            this.Controls.Add(this.LabelZakaznik);
             this.Controls.Add(this.btnUpravitKontrakt);
             this.Name = "UpravaKontraktu";
             this.Text = "UpravaKontraktu";
@@ -97,7 +97,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnUpravitKontrakt;
-        private System.Windows.Forms.Label LabelNazevKontraktu;
+        private System.Windows.Forms.Label LabelZakaznik;
         private System.Windows.Forms.Label LabelPopisKontraktu;
         private System.Windows.Forms.TextBox txtBoxUpravitNazevKontraktu;
         private System.Windows.Forms.TextBox txtBoxUpravaPopisuKontraktu;
