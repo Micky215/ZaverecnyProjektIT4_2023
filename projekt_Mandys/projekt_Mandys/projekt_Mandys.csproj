@@ -98,6 +98,12 @@
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="UpravaRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravaRole.Designer.cs">
+      <DependentUpon>UpravaRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravaUzivatele.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpravaZamestnancu.resx">
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravaRole.resx">
+      <DependentUpon>UpravaRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpravaUzivatele.resx">
       <DependentUpon>UpravaUzivatele.cs</DependentUpon>

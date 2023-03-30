@@ -51,5 +51,11 @@ namespace projekt_Mandys
             SqlRepository.RemoveRoleByID(int.Parse(listViewRole.SelectedItems[0].Text));
             UpdateSpravaRoli();
         }
+
+        private void btnUpravaRole_Click(object sender, EventArgs e)
+        {
+            UpravaRole upravaRole = new UpravaRole(Convert.ToInt32(listViewRole.SelectedItems[0].SubItems[0].Text), this);
+            upravaRole.ShowDialog();
+        }
     }
 }

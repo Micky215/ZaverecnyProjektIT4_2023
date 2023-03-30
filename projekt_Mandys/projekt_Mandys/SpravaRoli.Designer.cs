@@ -80,6 +80,7 @@
             this.btnUpravaRole.TabIndex = 2;
             this.btnUpravaRole.Text = "Úprava role";
             this.btnUpravaRole.UseVisualStyleBackColor = true;
+            this.btnUpravaRole.Click += new System.EventHandler(this.btnUpravaRole_Click);
             // 
             // btnSmazaniRole
             // 

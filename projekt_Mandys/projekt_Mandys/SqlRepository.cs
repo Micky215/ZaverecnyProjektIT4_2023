@@ -185,6 +185,18 @@ namespace projekt_Mandys
 
         }
 
+        public static void EditRole(int id, string nazevRole)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "UPDATE Role SET NazevRole=@nazevRole WHERE IdRole=@id";
+            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("nazevRole", nazevRole);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public static void RemoveRoleByID(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
