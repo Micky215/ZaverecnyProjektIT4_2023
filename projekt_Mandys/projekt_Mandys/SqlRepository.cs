@@ -13,9 +13,10 @@ namespace projekt_Mandys
 {
     internal class SqlRepository
     {
+        //CONNECTION STRING
         private static readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DEDMS\Desktop\ForkZaverecnyProjekt\projekt_Mandys\Zamestnanci.mdf;Integrated Security=True;Connect Timeout=30";
 
-
+        //ZOBRAZENÍ DAT UŽIVATELŮ
         public static List<Uzivatel> ShowUzivatele()
         {
             var uzivatele = new List<Uzivatel>();
@@ -38,6 +39,7 @@ namespace projekt_Mandys
             return uzivatele;
         }
 
+        //ZOBRAZENÍ DAT ZAMĚSTNANCŮ
         public static List<Zamestnanec> ShowZamestnance()
         {
             var zametnanec = new List<Zamestnanec>();
@@ -60,6 +62,7 @@ namespace projekt_Mandys
             return zametnanec;
         }
 
+        //ZOBRAZENÍ DAT ROLÍ
         public static List<Role> ShowRole()
         {
             var role = new List<Role>();
@@ -82,6 +85,7 @@ namespace projekt_Mandys
             return role;
         }
 
+        //ODSTRANĚNÍ UŽIVATELE POMOCÍ ID
         public static void RemoveUzivateleByID(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -93,7 +97,7 @@ namespace projekt_Mandys
             conn.Close();
         }
 
-
+        //PŘIDÁNÍ UŽIVATELE
         public static void AddUzivatele(int idZamestnance, string jmeno, string heslo, int role)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -109,6 +113,7 @@ namespace projekt_Mandys
 
         }
 
+        //ÚPRAVA UŽIVATELE
         public static void EditUzivatele(int id, int idZamestnanci, string jmeno, string heslo, int role)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -124,6 +129,7 @@ namespace projekt_Mandys
             conn.Close();
         }
 
+        //ODSTRANĚNÍ ZAMĚSTNANCE
         public static void RemoveZamestnanceByID(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -138,6 +144,8 @@ namespace projekt_Mandys
             command.ExecuteNonQuery();
             conn.Close();
         }
+
+        //ÚPRAVA ZAMĚSTNANCE
         public static void EditZamestnance(int id, string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, string telefon)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -154,9 +162,7 @@ namespace projekt_Mandys
             conn.Close();
         }
 
-
-
-
+        //PŘIDÁNÍ ZAMĚSTNANCE
         public static void AddZamestnance(string krestniJmeno, string prijmeni, DateTime datumNarozeni, string email, string telefon)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -173,6 +179,7 @@ namespace projekt_Mandys
 
         }
 
+        //PŘIDÁNÍ ROLE
         public static void AddRole(string nazevRole)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -185,6 +192,7 @@ namespace projekt_Mandys
 
         }
 
+        //ÚPRAVA ROLE
         public static void EditRole(int id, string nazevRole)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -197,6 +205,7 @@ namespace projekt_Mandys
             conn.Close();
         }
 
+        //ODSTRANĚNÍ ROLE POMOCÍ ID
         public static void RemoveRoleByID(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -208,6 +217,35 @@ namespace projekt_Mandys
             conn.Close();
         }
 
+        //PŘIDÁNÍ TYPU PRÁCE
+        public static void AddTypuPrace(string nazev, string popis)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "INSERT INTO TypyPrace VALUES (@nazev, @popis)";
+            command.Parameters.AddWithValue("nazev", nazev);
+            command.Parameters.AddWithValue("popis", popis);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        //ÚPRAVA TYPU PRÁCE
+        public static void EditTypuPrace(int id, string nazevTypuPrace, string popisTypuPrace)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "UPDATE TypyPrace SET Nazev=@nazevTypuPrace, Popis=@popisTypuPrace WHERE Id=@id";
+            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("nazevTypuPrace", nazevTypuPrace);
+            command.Parameters.AddWithValue("popisTypuPrace", popisTypuPrace);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        //ZÍSKÁNÍ UŽIVATELE
         public Uzivatel GetUzivatel(string uzivatelskeJmeno)
         {
             Uzivatel uzivatel = null;
@@ -240,101 +278,137 @@ namespace projekt_Mandys
 
         }
 
-        public Uzivatel GetUzivatelById(int id)
+        //ZOBRAZENÍ TYPU PRÁCE
+        public static List<TypPrace> ShowTypyPrace()
         {
-            Uzivatel uzivatel = null;
-            using (SqlConnection conn = new SqlConnection())
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "SELECT * FROM Uzivatele WHERE IdUzivatele=@id";
-                    cmd.Parameters.AddWithValue("id", id);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            uzivatel = new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToString(reader["Jmeno"]), Convert.ToString(reader["Heslo"]), Convert.ToInt32(reader["Role"]));
-                        }
-                        else
-                        {
-                            MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
-                        }
-                    }
-                }
-                conn.Close();
-            }
+            var typPrace = new List<TypPrace>();
 
-            return uzivatel;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM TypyPrace";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                typPrace.Add(new TypPrace(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return typPrace;
         }
 
-        public List<Uzivatel> GetUsers()
+        //MAZÁNÍ TYPŮ PRÁCE POMOCÍ ID
+        public static void RemoveTypPraceByID(int id)
         {
-            List<Uzivatel> uzivatele = new List<Uzivatel>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "select * from Uzivatele";
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            uzivatele.Add(new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToString(reader["Jmeno"]), Convert.ToString(reader["Heslo"]), Convert.ToInt32(reader["Role"])));
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return uzivatele;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "DELETE from TypyPrace WHERE Id =@id";
+            command.Parameters.AddWithValue("id", id);
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
-        public Role GetRole(string roleJmeno)
-        {
-            Role role = null;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "select * from Role where NazevRole=@roleName";
-                    cmd.Parameters.AddWithValue("roleName", roleJmeno);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            role = new Role(Convert.ToInt32(reader["IdRole"]));
-                        }
-                        else
-                        {
-                            MessageBox.Show("Role s takovýmto názvem neexistuje!");
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return role;
-        }
 
-        public void UpdateUzivatele(string jmeno, int idRole, int idUzivatele)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "update Uzivatele set Jmeno =@jmeno,Role=@idRole where IdUzivatele=@idUzivatele";
-                    cmd.Parameters.AddWithValue("userName", jmeno);
-                    cmd.Parameters.AddWithValue("idRole", idRole);
-                    cmd.Parameters.AddWithValue("idUser", idUzivatele);
-                    cmd.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-        }
+        //public Uzivatel GetUzivatelById(int id)
+        //{
+        //    Uzivatel uzivatel = null;
+        //    using (SqlConnection conn = new SqlConnection())
+        //    {
+        //        conn.Open();
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = "SELECT * FROM Uzivatele WHERE IdUzivatele=@id";
+        //            cmd.Parameters.AddWithValue("id", id);
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                if (reader.Read())
+        //                {
+        //                    uzivatel = new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToString(reader["Jmeno"]), Convert.ToString(reader["Heslo"]), Convert.ToInt32(reader["Role"]));
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+        //                }
+        //            }
+        //        }
+        //        conn.Close();
+        //    }
 
-        
+        //    return uzivatel;
+        //}
+
+        //public List<Uzivatel> GetUsers()
+        //{
+        //    List<Uzivatel> uzivatele = new List<Uzivatel>();
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = "select * from Uzivatele";
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    uzivatele.Add(new Uzivatel(Convert.ToInt32(reader["IdUzivatele"]), Convert.ToInt32(reader["IdZamestance"]), Convert.ToString(reader["Jmeno"]), Convert.ToString(reader["Heslo"]), Convert.ToInt32(reader["Role"])));
+        //                }
+        //            }
+        //        }
+        //        conn.Close();
+        //    }
+        //    return uzivatele;
+        //}
+
+        //public Role GetRole(string roleJmeno)
+        //{
+        //    Role role = null;
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = "select * from Role where NazevRole=@roleName";
+        //            cmd.Parameters.AddWithValue("roleName", roleJmeno);
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                if (reader.Read())
+        //                {
+        //                    role = new Role(Convert.ToInt32(reader["IdRole"]));
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("Role s takovýmto názvem neexistuje!");
+        //                }
+        //            }
+        //        }
+        //        conn.Close();
+        //    }
+        //    return role;
+        //}
+
+        //public void UpdateUzivatele(string jmeno, int idRole, int idUzivatele)
+        //{
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = "update Uzivatele set Jmeno =@jmeno,Role=@idRole where IdUzivatele=@idUzivatele";
+        //            cmd.Parameters.AddWithValue("userName", jmeno);
+        //            cmd.Parameters.AddWithValue("idRole", idRole);
+        //            cmd.Parameters.AddWithValue("idUser", idUzivatele);
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //        conn.Close();
+        //    }
+        //}
+
+
     }
 
 }

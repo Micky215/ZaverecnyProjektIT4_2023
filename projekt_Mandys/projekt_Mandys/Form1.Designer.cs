@@ -64,6 +64,7 @@
             this.btnSpravaKontraktu.TabIndex = 2;
             this.btnSpravaKontraktu.Text = "Správa kontraktů";
             this.btnSpravaKontraktu.UseVisualStyleBackColor = true;
+            this.btnSpravaKontraktu.Click += new System.EventHandler(this.btnSpravaKontraktu_Click);
             // 
             // btnSpravaZamestnancu
             // 

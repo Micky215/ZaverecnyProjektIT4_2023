@@ -48,8 +48,7 @@ namespace projekt_Mandys
                 {
                     MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
                 }
-            
-            
+                     
         }
     }
 }

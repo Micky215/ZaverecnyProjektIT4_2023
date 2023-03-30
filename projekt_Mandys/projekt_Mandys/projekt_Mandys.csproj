@@ -58,6 +58,12 @@
     <Compile Include="PridaniRole.Designer.cs">
       <DependentUpon>PridaniRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="PridaniTypuPrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PridaniTypuPrace.Designer.cs">
+      <DependentUpon>PridaniTypuPrace.cs</DependentUpon>
+    </Compile>
     <Compile Include="PridaniUzivateleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />
+    <Compile Include="SpravaKontraktu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravaKontraktu.Designer.cs">
+      <DependentUpon>SpravaKontraktu.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpravaRoli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +116,18 @@
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="TypPrace.cs" />
     <Compile Include="UpravaRole.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpravaRole.Designer.cs">
       <DependentUpon>UpravaRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpravaTypuPrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravaTypuPrace.Designer.cs">
+      <DependentUpon>UpravaTypuPrace.cs</DependentUpon>
     </Compile>
     <Compile Include="UpravaUzivatele.cs">
       <SubType>Form</SubType>
@@ -130,6 +149,9 @@
     <EmbeddedResource Include="PridaniRole.resx">
       <DependentUpon>PridaniRole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PridaniTypuPrace.resx">
+      <DependentUpon>PridaniTypuPrace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PridaniUzivateleForm.resx">
       <DependentUpon>PridaniUzivateleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +170,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SpravaKontraktu.resx">
+      <DependentUpon>SpravaKontraktu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpravaRoli.resx">
       <DependentUpon>SpravaRoli.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpravaRole.resx">
       <DependentUpon>UpravaRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravaTypuPrace.resx">
+      <DependentUpon>UpravaTypuPrace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpravaUzivatele.resx">
       <DependentUpon>UpravaUzivatele.cs</DependentUpon>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listViewTypyPraci = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.jmeno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPridatTypPrace = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             // listViewTypyPraci
             // 
             this.listViewTypyPraci.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
             this.jmeno,
             this.popis});
             this.listViewTypyPraci.FullRowSelect = true;
@@ -52,15 +54,22 @@
             this.listViewTypyPraci.UseCompatibleStateImageBehavior = false;
             this.listViewTypyPraci.View = System.Windows.Forms.View.Details;
             // 
+            // id
+            // 
+            this.id.Text = "ID";
+            this.id.Width = 50;
+            // 
             // jmeno
             // 
             this.jmeno.Text = "Jméno";
+            this.jmeno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.jmeno.Width = 150;
             // 
             // popis
             // 
             this.popis.Text = "Popis";
             this.popis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.popis.Width = 300;
+            this.popis.Width = 400;
             // 
             // btnPridatTypPrace
             // 
@@ -70,6 +79,7 @@
             this.btnPridatTypPrace.TabIndex = 1;
             this.btnPridatTypPrace.Text = "Přidat typ práce";
             this.btnPridatTypPrace.UseVisualStyleBackColor = true;
+            this.btnPridatTypPrace.Click += new System.EventHandler(this.btnPridatTypPrace_Click);
             // 
             // btnUpravitTypPrace
             // 
@@ -79,6 +89,7 @@
             this.btnUpravitTypPrace.TabIndex = 2;
             this.btnUpravitTypPrace.Text = "Upravit typ práce";
             this.btnUpravitTypPrace.UseVisualStyleBackColor = true;
+            this.btnUpravitTypPrace.Click += new System.EventHandler(this.btnUpravitTypPrace_Click);
             // 
             // btnSmazatTypPrace
             // 
@@ -88,6 +99,7 @@
             this.btnSmazatTypPrace.TabIndex = 3;
             this.btnSmazatTypPrace.Text = "Smazat typ práce";
             this.btnSmazatTypPrace.UseVisualStyleBackColor = true;
+            this.btnSmazatTypPrace.Click += new System.EventHandler(this.btnSmazatTypPrace_Click);
             // 
             // SpravaTypuPrace
             // 
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button btnPridatTypPrace;
         private System.Windows.Forms.Button btnUpravitTypPrace;
         private System.Windows.Forms.Button btnSmazatTypPrace;
+        private System.Windows.Forms.ColumnHeader id;
     }
 }

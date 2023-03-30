@@ -47,5 +47,11 @@ namespace projekt_Mandys
             SpravaTypuPrace spravaTypuPrace = new SpravaTypuPrace();
             spravaTypuPrace.ShowDialog();
         }
+
+        private void btnSpravaKontraktu_Click(object sender, EventArgs e)
+        {
+            SpravaKontraktu spravaKontraktu= new SpravaKontraktu();
+            spravaKontraktu.ShowDialog();
+        }
     }
 }
