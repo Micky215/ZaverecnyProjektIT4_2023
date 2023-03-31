@@ -222,6 +222,9 @@
     <EmbeddedResource Include="UpravaZamestnance.resx">
       <DependentUpon>UpravaZamestnance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UzivatelForm.resx">
+      <DependentUpon>UzivatelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

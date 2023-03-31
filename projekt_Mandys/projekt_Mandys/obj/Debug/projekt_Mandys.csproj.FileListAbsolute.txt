@@ -61,3 +61,4 @@ C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\De
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.SpravaKontraktu.resources
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.PridaniKontraktu.resources
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UpravaKontraktu.resources
+C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UzivatelForm.resources
