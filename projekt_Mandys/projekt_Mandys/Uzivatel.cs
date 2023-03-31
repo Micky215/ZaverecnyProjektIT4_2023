@@ -26,11 +26,11 @@ namespace projekt_Mandys
             Id = id;
         }
 
-        public Uzivatel(string jmeno, string heslo)
+        public Uzivatel(string jmeno, string heslo, int role)
         {
             Heslo = heslo;
             Jmeno = jmeno;
-           
+            Role = role;
         }
 
         //public bool OverovaniHesla(string text)

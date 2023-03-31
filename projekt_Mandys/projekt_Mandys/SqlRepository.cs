@@ -260,7 +260,7 @@ namespace projekt_Mandys
                     {
                         if (reader.Read())
                         {
-                            uzivatel = new Uzivatel(reader["Jmeno"].ToString(), reader["Heslo"].ToString());
+                            uzivatel = new Uzivatel(reader["Jmeno"].ToString(), reader["Heslo"].ToString(), Convert.ToInt32(reader["Role"]));
                         }
                         else
                         {
@@ -374,6 +374,24 @@ namespace projekt_Mandys
             command.Parameters.AddWithValue("id", id);
             command.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public Role GetRole(int idRole)
+        {
+            Role role = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select * from Role where IdRole = @idRole";
+            cmd.Parameters.AddWithValue("idRole", idRole);
+            SqlDataReader reader = cmd.ExecuteReader();
+                   if (reader.Read())
+                   {
+                     role = new Role(Convert.ToInt32(reader["IdRole"]), Convert.ToString(reader["NazevRole"]));
+                   }
+                conn.Close();
+            
+            return role;
         }
 
 

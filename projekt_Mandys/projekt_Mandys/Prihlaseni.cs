@@ -19,6 +19,7 @@ namespace projekt_Mandys
             sqlRepository = new SqlRepository();
         }
 
+
         private void btnPrihlasit_Click(object sender, EventArgs e)
         {
                 if (txtBoxJmeno.Text != " " && txtBoxHeslo.Text != " ")
@@ -26,11 +27,22 @@ namespace projekt_Mandys
                  Uzivatel uzivatel = sqlRepository.GetUzivatel(txtBoxJmeno.Text);
                     if (uzivatel != null)
                     {
+                        Role role = sqlRepository.GetRole(uzivatel.Role);
                         if (txtBoxHeslo.Text == uzivatel.Heslo.ToString())
                         {
-                            Form1 form1 = new Form1(uzivatel);
-                            form1.Show();
-                            this.Hide();
+                            if(role.NazevRole == "Administrator")
+                            {
+                                Form1 form1 = new Form1(uzivatel);
+                                form1.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                UzivatelForm formUzivatele = new UzivatelForm(uzivatel);
+                                formUzivatele.Show();
+                                this.Hide();
+                        }
+                            
                         }
 
 
