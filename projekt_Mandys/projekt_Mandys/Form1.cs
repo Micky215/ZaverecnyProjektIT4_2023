@@ -53,5 +53,11 @@ namespace projekt_Mandys
             SpravaKontraktu spravaKontraktu= new SpravaKontraktu();
             spravaKontraktu.ShowDialog();
         }
+
+        private void btnSpravaOdpracovanychHodin_Click(object sender, EventArgs e)
+        {
+            SpravitOdpracovaneHodiny spravaOdpracovaneHodiny = new SpravitOdpracovaneHodiny();
+            spravaOdpracovaneHodiny.ShowDialog();
+        }
     }
 }

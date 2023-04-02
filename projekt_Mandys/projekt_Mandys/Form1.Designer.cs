@@ -94,6 +94,7 @@
             this.btnSpravaOdpracovanychHodin.TabIndex = 4;
             this.btnSpravaOdpracovanychHodin.Text = "Správa odpracovaných hodin";
             this.btnSpravaOdpracovanychHodin.UseVisualStyleBackColor = true;
+            this.btnSpravaOdpracovanychHodin.Click += new System.EventHandler(this.btnSpravaOdpracovanychHodin_Click);
             // 
             // Form1
             // 

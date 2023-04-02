@@ -122,6 +122,12 @@
     <Compile Include="SpravaZamestnancu.Designer.cs">
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpravitOdpracovaneHodiny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravitOdpracovaneHodiny.Designer.cs">
+      <DependentUpon>SpravitOdpracovaneHodiny.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlRepository.cs" />
     <Compile Include="TypPrace.cs" />
     <Compile Include="UpravaKontraktu.cs">
