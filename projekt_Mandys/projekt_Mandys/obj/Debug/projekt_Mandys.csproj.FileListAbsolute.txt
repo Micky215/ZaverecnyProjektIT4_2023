@@ -62,3 +62,6 @@ C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\De
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.PridaniKontraktu.resources
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UpravaKontraktu.resources
 C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UzivatelForm.resources
+C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.SpravitOdpracovaneHodiny.resources
+C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.PridaniOdpracovanychHodin.resources
+C:\Users\DEDMS\Desktop\ZaverecnyProjekt-IT4\projekt_Mandys\projekt_Mandys\obj\Debug\projekt_Mandys.UpravaOdpracovanychHodin.resources

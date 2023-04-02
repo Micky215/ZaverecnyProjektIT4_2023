@@ -30,18 +30,22 @@
         {
             this.listViewPohledZakaznika = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.zakaznik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.popis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.odpracovaneHodiny = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PocetHodin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idZamestnance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idKontraktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idPrace = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listViewPohledZakaznika
             // 
             this.listViewPohledZakaznika.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.id,
-            this.zakaznik,
-            this.popis,
-            this.odpracovaneHodiny});
+            this.PocetHodin,
+            this.datum,
+            this.idZamestnance,
+            this.idKontraktu,
+            this.idPrace});
             this.listViewPohledZakaznika.FullRowSelect = true;
             this.listViewPohledZakaznika.GridLines = true;
             this.listViewPohledZakaznika.HideSelection = false;
@@ -57,23 +61,35 @@
             // 
             this.id.Text = "ID";
             // 
-            // zakaznik
+            // PocetHodin
             // 
-            this.zakaznik.Text = "Zákazník";
-            this.zakaznik.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.zakaznik.Width = 150;
+            this.PocetHodin.Text = "Počet hodin";
+            this.PocetHodin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PocetHodin.Width = 100;
             // 
-            // popis
+            // datum
             // 
-            this.popis.Text = "Popis";
-            this.popis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.popis.Width = 300;
+            this.datum.Text = "Datum";
+            this.datum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.datum.Width = 100;
             // 
-            // odpracovaneHodiny
+            // idZamestnance
             // 
-            this.odpracovaneHodiny.Text = "Odpracované hodiny";
-            this.odpracovaneHodiny.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.odpracovaneHodiny.Width = 120;
+            this.idZamestnance.Text = "ID zaměstnance";
+            this.idZamestnance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idZamestnance.Width = 100;
+            // 
+            // idKontraktu
+            // 
+            this.idKontraktu.Text = "ID kontraktu";
+            this.idKontraktu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idKontraktu.Width = 100;
+            // 
+            // idPrace
+            // 
+            this.idPrace.Text = "ID práce";
+            this.idPrace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idPrace.Width = 100;
             // 
             // UzivatelForm
             // 
@@ -91,8 +107,10 @@
 
         private System.Windows.Forms.ListView listViewPohledZakaznika;
         private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader zakaznik;
-        private System.Windows.Forms.ColumnHeader popis;
-        private System.Windows.Forms.ColumnHeader odpracovaneHodiny;
+        private System.Windows.Forms.ColumnHeader PocetHodin;
+        private System.Windows.Forms.ColumnHeader datum;
+        private System.Windows.Forms.ColumnHeader idZamestnance;
+        private System.Windows.Forms.ColumnHeader idKontraktu;
+        private System.Windows.Forms.ColumnHeader idPrace;
     }
 }

@@ -53,11 +53,18 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontrakt.cs" />
+    <Compile Include="OdpracovaneHodiny.cs" />
     <Compile Include="PridaniKontraktu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PridaniKontraktu.Designer.cs">
       <DependentUpon>PridaniKontraktu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PridaniOdpracovanychHodin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PridaniOdpracovanychHodin.Designer.cs">
+      <DependentUpon>PridaniOdpracovanychHodin.cs</DependentUpon>
     </Compile>
     <Compile Include="PridaniRole.cs">
       <SubType>Form</SubType>
@@ -136,6 +143,12 @@
     <Compile Include="UpravaKontraktu.Designer.cs">
       <DependentUpon>UpravaKontraktu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpravaOdpracovanychHodin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravaOdpracovanychHodin.Designer.cs">
+      <DependentUpon>UpravaOdpracovanychHodin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravaRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PridaniKontraktu.resx">
       <DependentUpon>PridaniKontraktu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PridaniOdpracovanychHodin.resx">
+      <DependentUpon>PridaniOdpracovanychHodin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PridaniRole.resx">
       <DependentUpon>PridaniRole.cs</DependentUpon>
@@ -213,8 +229,14 @@
     <EmbeddedResource Include="SpravaZamestnancu.resx">
       <DependentUpon>SpravaZamestnancu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpravitOdpracovaneHodiny.resx">
+      <DependentUpon>SpravitOdpracovaneHodiny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpravaKontraktu.resx">
       <DependentUpon>UpravaKontraktu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravaOdpracovanychHodin.resx">
+      <DependentUpon>UpravaOdpracovanychHodin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpravaRole.resx">
       <DependentUpon>UpravaRole.cs</DependentUpon>

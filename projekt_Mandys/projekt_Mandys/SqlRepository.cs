@@ -85,6 +85,28 @@ namespace projekt_Mandys
             return role;
         }
 
+        public static List<OdpracovaneHodiny> ShowOdpracovaneHodiny()
+        {
+            var odpracovaneHodiny = new List<OdpracovaneHodiny>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM OdpracovaneHodiny";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                odpracovaneHodiny.Add(new OdpracovaneHodiny(reader.GetInt32(0), reader.GetInt32(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return odpracovaneHodiny;
+        }
+
         //ODSTRANĚNÍ UŽIVATELE POMOCÍ ID
         public static void RemoveUzivateleByID(int id)
         {
@@ -393,7 +415,48 @@ namespace projekt_Mandys
             
             return role;
         }
+        public static void AddOdpracovaneHodiny(int pocetHodiny, DateTime datum, int idZamestnance, int idKontraktu, int idPrace)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "INSERT INTO OdpracovaneHodiny VALUES (@PocetHodin, @Datum, @IdZamestnance, @IdKontraktu, @IdPrace)";
+            command.Parameters.AddWithValue("PocetHodin", pocetHodiny);
+            command.Parameters.AddWithValue("Datum", datum);
+            command.Parameters.AddWithValue("IdZamestnance", idZamestnance);
+            command.Parameters.AddWithValue("IdKontraktu", idKontraktu);
+            command.Parameters.AddWithValue("IdPrace", idPrace);
+            command.ExecuteNonQuery();
+            conn.Close();
 
+        }
+
+        public static void EditOdpracovaneHodiny(int id, int pocetHodin, DateTime datum, int idZamestnanci, int idKontraktu, int idPrace)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "UPDATE OdpracovaneHodiny SET PocetHodin=@pocetHodin, Datum=@datum, IdZamestnanci = @idZamestnanci, IdKontraktu = @idKontraktu, IdPrace = @idPrace WHERE Id=@id";
+            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("pocetHodin", pocetHodin);
+            command.Parameters.AddWithValue("datum", datum);
+            command.Parameters.AddWithValue("idZamestnanci", idZamestnanci);
+            command.Parameters.AddWithValue("idKontraktu", idKontraktu);
+            command.Parameters.AddWithValue("idPrace", idPrace);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void RemoveOdpracovaneHodinyByID(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "DELETE from OdpracovaneHodiny WHERE Id =@id";
+            command.Parameters.AddWithValue("id", id);
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
 
         //public Uzivatel GetUzivatelById(int id)
         //{
