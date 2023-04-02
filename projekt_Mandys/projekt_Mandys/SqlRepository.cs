@@ -458,6 +458,28 @@ namespace projekt_Mandys
             conn.Close();
         }
 
+        public static List<OdpracovaneHodiny> ShowUzivatelForm()
+        {
+            var odpracovaneHodiny = new List<OdpracovaneHodiny>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM OdpracovaneHodiny";
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                odpracovaneHodiny.Add(new OdpracovaneHodiny(reader.GetInt32(0), reader.GetInt32(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5)));
+            }
+            reader.Close();
+            conn.Close();
+
+
+
+            return odpracovaneHodiny;
+        }
+
         //public Uzivatel GetUzivatelById(int id)
         //{
         //    Uzivatel uzivatel = null;

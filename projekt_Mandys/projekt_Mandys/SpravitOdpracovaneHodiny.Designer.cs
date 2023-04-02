@@ -30,11 +30,11 @@
         {
             this.listViewOdpracovaneHodiny = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mnozstviHodin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PocetHodin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idEmployee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.idContract = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.idHodin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idKontraktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idTypuPrace = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPridatOdpracovaneHodiny = new System.Windows.Forms.Button();
             this.btnUpravitOdpracovaneHodiny = new System.Windows.Forms.Button();
             this.btnSmazatOdpracovaneHodiny = new System.Windows.Forms.Button();
@@ -44,11 +44,11 @@
             // 
             this.listViewOdpracovaneHodiny.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.id,
-            this.mnozstviHodin,
+            this.PocetHodin,
             this.datum,
             this.idEmployee,
-            this.idContract,
-            this.idHodin});
+            this.idKontraktu,
+            this.idTypuPrace});
             this.listViewOdpracovaneHodiny.FullRowSelect = true;
             this.listViewOdpracovaneHodiny.GridLines = true;
             this.listViewOdpracovaneHodiny.HideSelection = false;
@@ -65,11 +65,11 @@
             this.id.Text = "ID";
             this.id.Width = 100;
             // 
-            // mnozstviHodin
+            // PocetHodin
             // 
-            this.mnozstviHodin.Text = "Množství hodin";
-            this.mnozstviHodin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mnozstviHodin.Width = 100;
+            this.PocetHodin.Text = "Počet hodin";
+            this.PocetHodin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PocetHodin.Width = 100;
             // 
             // datum
             // 
@@ -83,16 +83,16 @@
             this.idEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.idEmployee.Width = 100;
             // 
-            // idContract
+            // idKontraktu
             // 
-            this.idContract.Text = "ID zakázky";
-            this.idContract.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.idContract.Width = 100;
+            this.idKontraktu.Text = "ID zakázky";
+            this.idKontraktu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idKontraktu.Width = 100;
             // 
-            // idHodin
+            // idTypuPrace
             // 
-            this.idHodin.Text = "ID typu práce";
-            this.idHodin.Width = 100;
+            this.idTypuPrace.Text = "ID typu práce";
+            this.idTypuPrace.Width = 100;
             // 
             // btnPridatOdpracovaneHodiny
             // 
@@ -146,10 +146,10 @@
         private System.Windows.Forms.Button btnUpravitOdpracovaneHodiny;
         private System.Windows.Forms.Button btnSmazatOdpracovaneHodiny;
         private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader mnozstviHodin;
+        private System.Windows.Forms.ColumnHeader PocetHodin;
         private System.Windows.Forms.ColumnHeader datum;
         private System.Windows.Forms.ColumnHeader idEmployee;
-        private System.Windows.Forms.ColumnHeader idContract;
-        private System.Windows.Forms.ColumnHeader idHodin;
+        private System.Windows.Forms.ColumnHeader idKontraktu;
+        private System.Windows.Forms.ColumnHeader idTypuPrace;
     }
 }

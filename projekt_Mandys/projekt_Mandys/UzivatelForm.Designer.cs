@@ -35,6 +35,7 @@
             this.idZamestnance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idKontraktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idPrace = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnPridatZaznam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewPohledZakaznika
@@ -91,11 +92,22 @@
             this.idPrace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.idPrace.Width = 100;
             // 
+            // btnPridatZaznam
+            // 
+            this.btnPridatZaznam.Location = new System.Drawing.Point(701, 50);
+            this.btnPridatZaznam.Name = "btnPridatZaznam";
+            this.btnPridatZaznam.Size = new System.Drawing.Size(75, 23);
+            this.btnPridatZaznam.TabIndex = 1;
+            this.btnPridatZaznam.Text = "Přidat";
+            this.btnPridatZaznam.UseVisualStyleBackColor = true;
+            this.btnPridatZaznam.Click += new System.EventHandler(this.btnPridatZaznam_Click);
+            // 
             // UzivatelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPridatZaznam);
             this.Controls.Add(this.listViewPohledZakaznika);
             this.Name = "UzivatelForm";
             this.Text = "UzivatelForm";
@@ -112,5 +124,6 @@
         private System.Windows.Forms.ColumnHeader idZamestnance;
         private System.Windows.Forms.ColumnHeader idKontraktu;
         private System.Windows.Forms.ColumnHeader idPrace;
+        private System.Windows.Forms.Button btnPridatZaznam;
     }
 }
